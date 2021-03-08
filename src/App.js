@@ -7,8 +7,8 @@ import { Contract } from './components/Contract';
 import { Keys } from './components/Keys';
 import { Gallery } from './components/Gallery';
 
-import Avatar from 'url:./img/avatar.jpg';
-import NearLogo from 'url:./img/near_icon.svg';
+import Avatar from './img/avatar.jpg';
+import NearLogo from './img/near_icon.svg';
 
 import './App.scss';
 
@@ -16,9 +16,9 @@ const App = () => {
 	const { state, dispatch, update } = useContext(appStore);
 
     console.log(state)
-    
+
 	const { near, wallet, contractAccount, account, localKeys, loading } = state;
-    
+
 	const [profile, setProfile] = useState(false);
 
 	const onMount = () => {
@@ -35,56 +35,58 @@ const App = () => {
 	if (profile && !signedIn) {
 		setProfile(false);
 	}
-    
+
 	return <>
 		{ loading && <div className="loading">
 			<img src={NearLogo} />
 		</div>
 		}
-        
-		<div id="menu">
-			<div>
+
+		<div className="main-container">
+			<div id="menu">
 				<div>
-					<img style={{ opacity: signedIn ? 1 : 0.25 }} src={Avatar} 
-						onClick={() => setProfile(!profile)}
-					/>
-				</div>
-				<div>
-					{ !signedIn ? <Wallet {...{ wallet }} /> : accountId }
+					<div>
+						<img style={{ opacity: signedIn ? 1 : 0.25 }} src={Avatar}
+							onClick={() => setProfile(!profile)}
+						/>
+					</div>
+					<div>
+						{ !signedIn ? <Wallet {...{ wallet }} /> : accountId }
+					</div>
 				</div>
 			</div>
-		</div>
 
-		{
-			profile && signedIn && <div id="profile">
-				<div>
-					{
-						wallet && wallet.signedIn && <Wallet {...{ wallet, account, update, dispatch, handleClose: () => setProfile(false) }} />
-					}
-					{
-						localKeys && localKeys.signedIn && <Keys {...{ near, update, localKeys }} />
-					}
+			{
+				profile && signedIn && <div id="profile">
+					<div>
+						{
+							wallet && wallet.signedIn && <Wallet {...{ wallet, account, update, dispatch, handleClose: () => setProfile(false) }} />
+						}
+						{
+							localKeys && localKeys.signedIn && <Keys {...{ near, update, localKeys }} />
+						}
+					</div>
 				</div>
-			</div>
-		}
+			}
 
-		{ !signedIn &&
-            <div id="guest">
-            	<>
-            		<Keys {...{ near, update, localKeys }} />
-            	</>
-            </div>
-		}
-		{ signedIn &&
-            <div id="contract">
-            	{
-            		signedIn &&
-                    <Contract {...{ near, update, localKeys, wallet, account }} />
-            	}
-            </div>
-		}
-		<div id="gallery">
-			<Gallery {...{ near, signedIn, contractAccount, account, localKeys, loading, update }} />
+			{ !signedIn &&
+	            <div id="guest">
+	            	<>
+	            		<Keys {...{ near, update, localKeys }} />
+	            	</>
+	            </div>
+			}
+			{ signedIn &&
+	            <div id="contract">
+	            	{
+	            		signedIn &&
+	                    <Contract {...{ near, update, localKeys, wallet, account }} />
+	            	}
+	            </div>
+			}
+			<div id="gallery">
+				<Gallery {...{ near, signedIn, contractAccount, account, localKeys, loading, update }} />
+			</div>
 		</div>
 	</>;
 };

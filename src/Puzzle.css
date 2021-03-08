@@ -1,0 +1,29 @@
+.puzzle-piece {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.nft-main {
+  width: 431px;
+  height: 526px;
+}
+
+.puzzle-piece {
+    position: relative;
+    /* width: 360px; /* can be omitted for a regular non-lazy image */
+    /* max-width: 100%; */
+}
+.nft-secret {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .2s;
+  height: 526px;
+}
+.puzzle-piece:hover .nft-secret {
+  opacity: 1;
+}

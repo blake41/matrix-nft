@@ -4,9 +4,17 @@ import * as nearAPI from 'near-api-js';
 export const {
 	GAS,
 	networkId, nodeUrl, walletUrl, nameSuffix,
-	contractName, contractMethods,
-	accessKeyMethods
+	contractName
 } = getConfig();
+
+const contractMethods = {
+	changeMethods: ['new', 'mint_token', 'guest_mint', 'transfer', 'set_price', 'purchase', 'withdraw'],
+	viewMethods: ['get_token_data', 'get_num_tokens', 'get_proceeds'],
+}
+const accessKeyMethods = {
+	changeMethods: ['guest_mint', 'set_price', 'withdraw'],
+	viewMethods: ['get_token_data', 'get_num_tokens', 'get_proceeds', 'get_pubkey_minted'],
+}
 
 const {
 	Account,

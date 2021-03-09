@@ -100,9 +100,9 @@ export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, l
 
 	return <>
 		{signedIn && <div className="filters">
-			<button onClick={() => setFilter(1)} style={{ background: filter === 1 ? '#FFB259' : ''}}>Market</button>
+			<button onClick={() => setFilter(1)} className="hidden">Market</button>
 			<button onClick={() => setFilter(2)} style={{ background: filter === 2 ? '#FFB259' : ''}}>My Tokens</button>
-			<button onClick={initializeContract}>Init Contract</button>
+			<button onClick={initializeContract} className="hidden">Init Contract</button>
 	</div>}
 		{
 			(filter === 1 ? market : mine).map(({ metadata, owner_id, price, token_id }) => <div key={token_id} className="item">

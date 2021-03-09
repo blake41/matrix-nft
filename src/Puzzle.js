@@ -1,17 +1,44 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PuzzlePieces from './PuzzlePieces.js'
 import './Puzzle.css'
+import DaftPunkA from './img/daft-punk-one.jpeg';
 import DaftPunkB from './img/daft-punk-gilar-artoholic.jpeg';
 import DaftPunkC from './img/daft-punk-c.jpeg';
-import LostOne from './img/lost1.jpeg';
-import LostTwo from './img/lost2.jpeg';
-import LostThree from './img/lost3.jpeg';
+import { appStore, onAppMount } from './state/app';
+import {
+	getContract
+} from './utils/near-utils';
 
-const URLA = 'https://instagram.fsjo14-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/153276485_416716572771811_3196214184203710152_n.jpg?tp=1&_nc_ht=instagram.fsjo14-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=RETMKCysn08AX-9SOB1&oh=331f39e0d3814aec1a0caceb95d54285&oe=606E7EE4'
 export default function Puzzle(props) {
+  const { state, dispatch, update } = useContext(appStore);
+	const { near, wallet, contractAccount, account, localKeys, loading } = state;
+  const [items, setItems] = useState([]);
+  const onMount = () => {
+		dispatch(onAppMount());
+	};
+	useEffect(onMount, []);
 
-  const tempPieces = [{url: URLA, secretUrl: LostOne},{url: DaftPunkB, secretUrl: LostTwo}, {url: DaftPunkC, secretUrl: LostThree}]
+  const loadItems = async () => {
+		const contract = getContract(contractAccount);
+		const num_tokens = await contract.get_num_tokens();
+		const newItems = [];
+		for (let i = 1; i <= num_tokens; i++) {
+			const data = await contract.get_token_data({
+				token_id: i
+			});
+			newItems.push({
+				...data,
+				token_id: i
+			});
+		}
+		newItems.reverse();
+		console.log('loaded items', newItems);
+    setItems(newItems)
+	};
+  if (contractAccount) {
+   loadItems();
+  }
   return(
-    <PuzzlePieces pieces={tempPieces}/>
+    <PuzzlePieces pieces={items}/>
   )
 }

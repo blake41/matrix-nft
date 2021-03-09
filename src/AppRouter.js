@@ -3,7 +3,7 @@ import App from './App.js'
 import Puzzle from './Puzzle.js'
 import './AppRouter.css'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -11,7 +11,7 @@ import {
 
 export default function AppRouter() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="router">
         <nav>
           <ul>

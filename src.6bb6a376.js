@@ -717,7 +717,7 @@ module.exports="/nft-onboarding/lost2.f7e05403.jpeg";
 },{}],"nO+l":[function(require,module,exports) {
 module.exports="/nft-onboarding/lost3.3e9c322c.jpeg";
 },{}],"VEEj":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=c;var e=l(require("react"));require("./Puzzle.css");var t=l(require("./img/secret-image.jpeg")),r=l(require("./img/lost1.jpeg")),a=l(require("./img/lost2.jpeg")),u=l(require("./img/lost3.jpeg"));function l(e){return e&&e.__esModule?e:{default:e}}function s(t){const l={1:r.default,2:a.default,3:u.default};return e.default.createElement("div",{className:"puzzle-piece"},e.default.createElement("img",{className:"nft-main",src:t.src}),e.default.createElement("img",{className:"nft-secret",src:l[t.secretUrl]}))}function c(t){const r=t.pieces.sort(function(e,t){return e.token_id-t.token_id}).map((t,r)=>e.default.createElement(s,{key:r,src:t.metadata,secretUrl:t.token_id}));return e.default.createElement("div",null,r)}
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=i;var e=n(require("react"));require("./Puzzle.css");var t=n(require("./img/secret-image.jpeg")),r=n(require("./img/lost1.jpeg")),a=n(require("./img/lost2.jpeg")),u=n(require("./img/lost3.jpeg"));function n(e){return e&&e.__esModule?e:{default:e}}function l(t){const n={0:r.default,1:a.default,2:u.default},l=t.tokenId%3;return e.default.createElement("div",{className:"puzzle-piece"},e.default.createElement("img",{className:"nft-main",src:t.src}),e.default.createElement("img",{className:"nft-secret",src:n[l]}))}function i(t){const r=t.pieces.sort(function(e,t){return e.token_id-t.token_id}).map((t,r)=>e.default.createElement(l,{key:r,src:t.metadata,tokenId:t.token_id}));return e.default.createElement("div",null,r)}
 },{"react":"1n8/","./Puzzle.css":"70rD","./img/secret-image.jpeg":"7Cmh","./img/lost1.jpeg":"/sE8","./img/lost2.jpeg":"nopc","./img/lost3.jpeg":"nO+l"}],"3f8F":[function(require,module,exports) {
 module.exports="/nft-onboarding/daft-punk-one.c9ff46a2.jpeg";
 },{}],"JroE":[function(require,module,exports) {
@@ -775,4 +775,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{"react":"1n8/","./App.js":"lY9v","./Puzzle.js":"31fJ","./AppRouter.css":"70rD","react-router-dom":"/uc1"}],"Focm":[function(require,module,exports) {
 "use strict";var e=l(require("react")),r=l(require("react-dom")),t=l(require("./AppRouter.js")),u=require("./state/app.js");function l(e){return e&&e.__esModule?e:{default:e}}r.default.render(e.default.createElement(u.AppProvider,null,e.default.createElement(t.default,null)),document.getElementById("root"));
 },{"react":"1n8/","react-dom":"NKHc","./AppRouter.js":"Dt/e","./state/app.js":"MuMQ"}]},{},["Focm"], null)
-//# sourceMappingURL=/nft-onboarding/src.0b7d2b48.js.map
+//# sourceMappingURL=/nft-onboarding/src.6bb6a376.js.map

@@ -11,12 +11,12 @@ import {
 
 export default function AppRouter() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="router">
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" >Home</Link>
             </li>
             <li>
               <Link to="/puzzle">Puzzle</Link>

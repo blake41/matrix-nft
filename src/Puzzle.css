@@ -23,6 +23,8 @@
   opacity: 0;
   transition: opacity .2s;
   height: 526px;
+  width: 436px;
+  background: black;
 }
 .puzzle-piece:hover .nft-secret {
   opacity: 1;

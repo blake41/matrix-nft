@@ -1,4 +1,4 @@
-const CONTRACT_NAME = 'my-first-nft.blakeneartest.testnet'
+const CONTRACT_NAME = 'my-second-nft.blakeneartest.testnet'
 module.exports = function getConfig() {
 	let config = {
 		networkId: 'testnet',

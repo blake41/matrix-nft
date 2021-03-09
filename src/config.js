@@ -1,12 +1,11 @@
-const contractName = 'dev-1614138757516-6667260';
-
+const CONTRACT_NAME = 'my-first-nft.blakeneartest.testnet'
 module.exports = function getConfig() {
 	let config = {
 		networkId: 'default',
 		nodeUrl: 'https://rpc.testnet.near.org',
 		walletUrl: 'https://wallet.testnet.near.org',
 		helperUrl: 'https://helper.testnet.near.org',
-		contractName,
+		CONTRACT_NAME,
 	};
 
 	if (process.env.REACT_APP_ENV !== 'prod') {

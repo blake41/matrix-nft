@@ -32,7 +32,7 @@
         "start:deploy": "yarn test:deploy && yarn start",
         "start": "REACT_APP_ENV=dev parcel src/index.html --open",
         "prebuild": "yarn clean",
-        "build": "parcel build src/index.html --no-source-maps --public-url /nft-onboarding",
+        "build": "parcel build src/index.html --public-url /nft-onboarding",
         "clean": "rimraf ./dist ./parcel-cache",
         "fix": "eslint src/ test/ server/ --fix",
         "build:contracts": "(cd contracts && ./build.sh)",

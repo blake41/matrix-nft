@@ -773,3 +773,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{"react":"1n8/","./App.js":"lY9v","./Puzzle.js":"31fJ","./AppRouter.css":"70rD","react-router-dom":"/uc1"}],"Focm":[function(require,module,exports) {
 "use strict";var e=l(require("react")),r=l(require("react-dom")),t=l(require("./AppRouter.js")),u=require("./state/app.js");function l(e){return e&&e.__esModule?e:{default:e}}r.default.render(e.default.createElement(u.AppProvider,null,e.default.createElement(t.default,null)),document.getElementById("root"));
 },{"react":"1n8/","react-dom":"NKHc","./AppRouter.js":"Dt/e","./state/app.js":"MuMQ"}]},{},["Focm"], null)
+//# sourceMappingURL=/nft-onboarding/src.42599123.js.map

@@ -712,7 +712,9 @@ module.exports="/nft-onboarding/near_icon.53912769.svg";
 module.exports="/nft-onboarding/secret-image.4fd99e10.jpeg";
 },{}],"VEEj":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=l;var e=t(require("react"));require("./Puzzle.css");var r=t(require("./img/secret-image.jpeg"));function t(e){return e&&e.__esModule?e:{default:e}}function c(r){return e.default.createElement("div",{className:"puzzle-piece"},e.default.createElement("img",{className:"nft-main",src:r.src}),e.default.createElement("img",{className:"nft-secret",src:r.secretUrl}))}function l(r){const t=r.pieces.map((r,t)=>e.default.createElement(c,{key:t,src:r.url,secretUrl:r.secretUrl}));return e.default.createElement("div",null,t)}
-},{"react":"1n8/","./Puzzle.css":"70rD","./img/secret-image.jpeg":"7Cmh"}],"JroE":[function(require,module,exports) {
+},{"react":"1n8/","./Puzzle.css":"70rD","./img/secret-image.jpeg":"7Cmh"}],"3f8F":[function(require,module,exports) {
+module.exports="/nft-onboarding/daft-punk-one.c9ff46a2.jpeg";
+},{}],"JroE":[function(require,module,exports) {
 module.exports="/nft-onboarding/daft-punk-gilar-artoholic.e8fa58e9.jpeg";
 },{}],"oEJc":[function(require,module,exports) {
 module.exports="/nft-onboarding/daft-punk-c.d40a7a9f.jpeg";
@@ -723,8 +725,8 @@ module.exports="/nft-onboarding/lost2.f7e05403.jpeg";
 },{}],"nO+l":[function(require,module,exports) {
 module.exports="/nft-onboarding/lost3.3e9c322c.jpeg";
 },{}],"31fJ":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=i;var e=n(require("react")),t=n(require("./PuzzlePieces.js"));require("./Puzzle.css");var r=n(require("./img/daft-punk-gilar-artoholic.jpeg")),u=n(require("./img/daft-punk-c.jpeg")),a=n(require("./img/lost1.jpeg")),c=n(require("./img/lost2.jpeg")),l=n(require("./img/lost3.jpeg"));function n(e){return e&&e.__esModule?e:{default:e}}const s="https://instagram.fsjo14-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/153276485_416716572771811_3196214184203710152_n.jpg?tp=1&_nc_ht=instagram.fsjo14-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=RETMKCysn08AX-9SOB1&oh=331f39e0d3814aec1a0caceb95d54285&oe=606E7EE4";function i(n){const i=[{url:s,secretUrl:a.default},{url:r.default,secretUrl:c.default},{url:u.default,secretUrl:l.default}];return e.default.createElement(t.default,{pieces:i})}
-},{"react":"1n8/","./PuzzlePieces.js":"VEEj","./Puzzle.css":"70rD","./img/daft-punk-gilar-artoholic.jpeg":"JroE","./img/daft-punk-c.jpeg":"oEJc","./img/lost1.jpeg":"/sE8","./img/lost2.jpeg":"nopc","./img/lost3.jpeg":"nO+l"}],"hewo":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=f;var e=d(require("react")),r=d(require("./PuzzlePieces.js"));require("./Puzzle.css");var u=d(require("./img/daft-punk-one.jpeg")),t=d(require("./img/daft-punk-gilar-artoholic.jpeg")),l=d(require("./img/daft-punk-c.jpeg")),i=d(require("./img/lost1.jpeg")),a=d(require("./img/lost2.jpeg")),s=d(require("./img/lost3.jpeg"));function d(e){return e&&e.__esModule?e:{default:e}}function f(d){const f=[{url:u.default,secretUrl:i.default},{url:t.default,secretUrl:a.default},{url:l.default,secretUrl:s.default}];return e.default.createElement(r.default,{pieces:f})}
+},{"react":"1n8/","./PuzzlePieces.js":"VEEj","./Puzzle.css":"70rD","./img/daft-punk-one.jpeg":"3f8F","./img/daft-punk-gilar-artoholic.jpeg":"JroE","./img/daft-punk-c.jpeg":"oEJc","./img/lost1.jpeg":"/sE8","./img/lost2.jpeg":"nopc","./img/lost3.jpeg":"nO+l"}],"hewo":[function(require,module,exports) {
 "use strict";function e(t,r){return exports.default=e=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},e(t,r)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"S11h":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=o;var e=t(require("./setPrototypeOf.js"));function t(e){return e&&e.__esModule?e:{default:e}}function o(t,o){t.prototype=Object.create(o.prototype),t.prototype.constructor=t,(0,e.default)(t,o)}
@@ -773,4 +775,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{"react":"1n8/","./App.js":"lY9v","./Puzzle.js":"31fJ","./AppRouter.css":"70rD","react-router-dom":"/uc1"}],"Focm":[function(require,module,exports) {
 "use strict";var e=l(require("react")),r=l(require("react-dom")),t=l(require("./AppRouter.js")),u=require("./state/app.js");function l(e){return e&&e.__esModule?e:{default:e}}r.default.render(e.default.createElement(u.AppProvider,null,e.default.createElement(t.default,null)),document.getElementById("root"));
 },{"react":"1n8/","react-dom":"NKHc","./AppRouter.js":"Dt/e","./state/app.js":"MuMQ"}]},{},["Focm"], null)
-//# sourceMappingURL=/nft-onboarding/src.1eb2ed18.js.map
+//# sourceMappingURL=/nft-onboarding/src.dc172c8b.js.map

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import * as nearAPI from 'near-api-js';
 import { GAS, parseNearAmount } from '../state/near';
-import { 
+import {
 	createAccessKeyAccount,
 	accessKeyMethods,
 	contractMethods,
@@ -59,6 +59,11 @@ export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, l
 		update('loading', false);
 	};
 
+	const initializeContract = async () =>{
+		const contract = getContract(account);
+		await contract.new({owner_id: account.accountId});
+	}
+
 	const handleSetPrice = async (token_id) => {
 		update('loading', true);
 		let appAccount = account;
@@ -97,7 +102,8 @@ export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, l
 		{signedIn && <div className="filters">
 			<button onClick={() => setFilter(1)} style={{ background: filter === 1 ? '#FFB259' : ''}}>Market</button>
 			<button onClick={() => setFilter(2)} style={{ background: filter === 2 ? '#FFB259' : ''}}>My Tokens</button>
-		</div>}
+			<button onClick={initializeContract}>Init Contract</button>
+	</div>}
 		{
 			(filter === 1 ? market : mine).map(({ metadata, owner_id, price, token_id }) => <div key={token_id} className="item">
 				<img src={metadata} />
@@ -119,4 +125,3 @@ export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, l
 		}
 	</>;
 };
-

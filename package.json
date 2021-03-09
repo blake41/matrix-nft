@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "React Parcel Boilerplate",
     "author": "Matt Lockyer",
+    "homepage": "https://blake41.github.io/nft-onboarding/",
     "license": "ISC",
     "dependencies": {
         "bn": "^1.0.5",
@@ -15,6 +16,7 @@
     },
     "devDependencies": {
         "eslint": "^7.14.0",
+        "gh-pages": "^3.1.0",
         "jest": "^26.6.3",
         "jest-environment-uint8array": "^1.0.0",
         "node-fetch": "^2.6.1",

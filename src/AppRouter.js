@@ -1,7 +1,9 @@
-import React from "react";
+
 import App from './App.js'
 import Puzzle from './Puzzle.js'
 import './AppRouter.css'
+import React, { useContext, useEffect, useState } from 'react';
+import { appStore, onAppMount } from './state/app';
 import {
   HashRouter as Router,
   Switch,
@@ -9,7 +11,14 @@ import {
   Link
 } from "react-router-dom";
 
+
 export default function AppRouter() {
+  const { state, dispatch, update } = useContext(appStore);
+  const onMount = () => {
+    dispatch(onAppMount());
+  };
+  useEffect(onMount, []);
+
   return (
     <Router>
       <div className="router">
@@ -28,10 +37,10 @@ export default function AppRouter() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/puzzle">
-            <Puzzle />
+            <Puzzle state={state} update={update}/>
           </Route>
           <Route path="/">
-            <App />
+            <App state={state}/>
           </Route>
         </Switch>
       </div>

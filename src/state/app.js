@@ -9,6 +9,7 @@ const initialState = {
 	near: {
 		initialized: false,
 	},
+	items: []
 };
 
 export const { appStore, AppProvider } = State(initialState, 'app');

@@ -13,18 +13,18 @@ import NearLogo from './img/near_icon.svg';
 import './App.scss';
 
 const App = () => {
-	const { state, dispatch, update } = useContext(appStore);
-    console.log(state)
-
+	// const { state, dispatch, update } = useContext(appStore);
+	//
 	const { near, wallet, contractAccount, account, localKeys, loading } = state;
-
+	//
 	const [profile, setProfile] = useState(false);
-
-	const onMount = () => {
-		dispatch(onAppMount());
-	};
-	useEffect(onMount, []);
-
+	//
+	// const onMount = () => {
+	// 	console.log('mounting')
+	// 	dispatch(onAppMount());
+	// };
+	// useEffect(onMount, []);
+	// console.log('rendering app.js')
 	const signedIn = ((wallet && wallet.signedIn) || (localKeys && localKeys.signedIn));
 	let accountId = '';
 	if (signedIn) {

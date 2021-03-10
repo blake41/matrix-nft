@@ -22,29 +22,30 @@ export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, l
 	const [amount, setAmount] = useState('');
 	const [filter, setFilter] = useState(1);
 
-	useEffect(() => {
-		if (!fetching && !loading) loadItems();
-	}, [loading]);
+	// useEffect(() => {
+	// 	if (!fetching && !loading) loadItems();
+	// }, [loading]);
 
-	const loadItems = async () => {
-		setFetching(true);
-		const contract = getContract(contractAccount);
-		const num_tokens = await contract.get_num_tokens();
-		const newItems = [];
-		for (let i = 1; i <= num_tokens; i++) {
-			const data = await contract.get_token_data({
-				token_id: i
-			});
-			newItems.push({
-				...data,
-				token_id: i
-			});
-		}
-		newItems.reverse();
-		setItems(newItems);
-		console.log('loaded items', newItems);
-		setFetching(false);
-	};
+	// const loadItems = async () => {
+	// 	setFetching(true);
+	// 	const contract = getContract(contractAccount);
+	// 	const num_tokens = await contract.get_num_tokens();
+	// 	const newItems = [];
+	// 	for (let i = 1; i <= num_tokens; i++) {
+	// 		const data = await contract.get_token_data({
+	// 			token_id: i
+	// 		});
+	// 		newItems.push({
+	// 			...data,
+	// 			token_id: i
+	// 		});
+	// 	}
+	// 	newItems.reverse();
+	// 	setItems(newItems);
+	// 	update('loaded items', newItems)
+	// 	console.log(newItems);
+	// 	setFetching(false);
+	// };
 
 	const handlePurchase = async (token_id) => {
 		update('loading', true);

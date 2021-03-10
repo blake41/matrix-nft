@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "React Parcel Boilerplate",
     "author": "Matt Lockyer",
-    "homepage": "https://blake41.github.io/nft-onboarding/",
+    "homepage": "https://blake41.github.io/matrix-nft",
     "license": "ISC",
     "dependencies": {
         "bn": "^1.0.5",
@@ -32,7 +32,7 @@
         "start:deploy": "yarn test:deploy && yarn start",
         "start": "REACT_APP_ENV=dev parcel src/index.html --open",
         "prebuild": "yarn clean",
-        "build": "parcel build src/index.html --public-url /nft-onboarding",
+        "build": "parcel build src/index.html --public-url /matrix-nft",
         "clean": "rimraf ./dist ./parcel-cache",
         "fix": "eslint src/ test/ server/ --fix",
         "deploy:contracts": "yarn build:contracts && near deploy",

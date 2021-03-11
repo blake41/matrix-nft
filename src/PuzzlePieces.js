@@ -4,6 +4,10 @@ import SecretImage from './img/secret-image.jpeg';
 import LostOne from './img/lost1.jpeg';
 import LostTwo from './img/lost2.jpeg';
 import LostThree from './img/lost3.jpeg';
+import Box from './Box.js'
+import Bucket from './Bucket'
+
+
 
 function Piece(props) {
   const secretUrl = {
@@ -29,6 +33,9 @@ export default function PuzzlePieces(props) {
     return <Piece key={i} src={piece.metadata} tokenId={piece.token_id}/>
   })
   return(
-    <div>{Pieces}</div>
+    <div>
+      <Bucket />
+      <Box />
+    </div>
   )
 }

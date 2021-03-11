@@ -11,13 +11,7 @@ import {
   Link
 } from "react-router-dom";
 
-
 export default function AppRouter() {
-  const { state, dispatch, update } = useContext(appStore);
-  const onMount = () => {
-    dispatch(onAppMount());
-  };
-  useEffect(onMount, []);
 
   return (
     <Router>
@@ -37,10 +31,10 @@ export default function AppRouter() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/puzzle">
-            <Puzzle state={state} update={update}/>
+            <Puzzle />
           </Route>
           <Route path="/">
-            <App state={state} update={update}/>
+            <App />
           </Route>
         </Switch>
       </div>

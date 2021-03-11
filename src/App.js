@@ -12,19 +12,14 @@ import NearLogo from './img/near_icon.svg';
 
 import './App.scss';
 
-const App = (props) => {
-	const { state, update } = props
+const App = () => {
+	const { state, update } = useContext(appStore)
 	//
-	const { near, wallet, contractAccount, account, localKeys, loading } = state;
+	const { near, wallet, contractAccount, account, localKeys, loading, items } = state;
 	//
 	const [profile, setProfile] = useState(false);
 	//
-	// const onMount = () => {
-	// 	console.log('mounting')
-	// 	dispatch(onAppMount());
-	// };
-	// useEffect(onMount, []);
-	// console.log('rendering app.js')
+
 	const signedIn = ((wallet && wallet.signedIn) || (localKeys && localKeys.signedIn));
 	let accountId = '';
 	if (signedIn) {
@@ -84,7 +79,7 @@ const App = (props) => {
 	            </div>
 			}
 			<div id="gallery">
-				<Gallery {...{ near, signedIn, contractAccount, account, localKeys, loading, update }} />
+				<Gallery {...{ near, signedIn, contractAccount, account, localKeys, loading, update, items }} />
 			</div>
 		</div>
 	</>;

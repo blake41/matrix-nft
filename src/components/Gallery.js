@@ -14,11 +14,11 @@ const {
 	utils: { format: { formatNearAmount } }
 } = nearAPI;
 
-export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, loading, update }) => {
+export const Gallery = ({ near, signedIn, contractAccount, account, localKeys, loading, update, items }) => {
 	if (!contractAccount) return null;
-
+	console.log(items)
 	const [fetching, setFetching] = useState(false);
-	const [items, setItems] = useState([]);
+	// const [items, setItems] = useState([]);
 	const [amount, setAmount] = useState('');
 	const [filter, setFilter] = useState(1);
 

@@ -12,8 +12,8 @@ import NearLogo from './img/near_icon.svg';
 
 import './App.scss';
 
-const App = () => {
-	// const { state, dispatch, update } = useContext(appStore);
+const App = (props) => {
+	const { state, update } = props
 	//
 	const { near, wallet, contractAccount, account, localKeys, loading } = state;
 	//

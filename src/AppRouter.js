@@ -40,7 +40,7 @@ export default function AppRouter() {
             <Puzzle state={state} update={update}/>
           </Route>
           <Route path="/">
-            <App state={state}/>
+            <App state={state} update={update}/>
           </Route>
         </Switch>
       </div>

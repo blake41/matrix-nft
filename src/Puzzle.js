@@ -35,21 +35,34 @@ export default function Puzzle() {
     )
   }
   function generateDOM(items) {
-    return items.sort(function(a, b) {
-      return a.token_id - b.token_id;
-    }).map((piece, i) => {
-      return PuzzlePiece({key: i, src: piece.metadata, tokenId: piece.token_id})
+    var itemHolder = {}
+    items.forEach((item) => itemHolder[item.token_id] = item)
+    return _.map(new Array(props.items),(item, i) => {
+      if (itemHolder[i]) {
+        return PuzzlePiece({key: i, src: itemHolder[i].metadata, tokenId: itemHolder[i].token_id})
+      } else {
+        return (
+          <div key={i}>
+            <span className="text">{i}</span>
+          </div>
+        )
+      }
     })
+    // return items.sort(function(a, b) {
+    //   return a.token_id - b.token_id;
+    // }).map((piece, i) => {
+    //   return PuzzlePiece({key: i, src: piece.metadata, tokenId: piece.token_id})
+    // })
   }
 
   function generateLayout() {
     return _.map(new Array(props.items), function(item, i) {
-      // const y = _.result(p, "y") || Math.ceil(Math.random() * 4) + 1;
+      console.log(i)
       return {
         x: i % props.cols,
-        y: 1,
+        y: 0,
         w: 1,
-        h: 5,
+        h: 6,
         i: i.toString()
       };
     });

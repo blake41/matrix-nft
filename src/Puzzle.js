@@ -8,8 +8,8 @@ import HTML5Backend from 'react-dnd-html5-backend';
 export default function Puzzle(props) {
   const { state } = useContext(appStore);
   return (
-      <DndProvider backend={HTML5Backend}>
+      // <DndProvider backend={HTML5Backend}>
         <PuzzlePieces pieces={state.items}/>
-      </DndProvider>
+      // </DndProvider>
   );
 }

@@ -7,8 +7,8 @@ import { Contract } from './components/Contract';
 import { Keys } from './components/Keys';
 import { Gallery } from './components/Gallery';
 
-import Avatar from './img/avatar.jpg';
-import NearLogo from './img/near_icon.svg';
+import Avatar from 'url:./img/avatar.jpg';
+import NearLogo from 'url:./img/near_icon.svg';
 
 import './App.scss';
 

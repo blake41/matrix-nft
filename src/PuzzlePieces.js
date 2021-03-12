@@ -1,9 +1,9 @@
 import React from 'react';
 import './Puzzle.css'
-import SecretImage from './img/secret-image.jpeg';
-import LostOne from './img/lost1.jpeg';
-import LostTwo from './img/lost2.jpeg';
-import LostThree from './img/lost3.jpeg';
+import SecretImage from 'url:./img/secret-image.jpeg';
+import LostOne from 'url:./img/lost1.jpeg';
+import LostTwo from 'url:./img/lost2.jpeg';
+import LostThree from 'url:./img/lost3.jpeg';
 import Box from './Box.js'
 import Bucket from './Bucket'
 

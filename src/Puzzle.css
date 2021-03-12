@@ -6,11 +6,10 @@
 .puzzle-piece-container {
   width:100%;
   height:100%;
+  cursor: grab;
 }
 
 .nft-main {
-  /* width: 431px;
-  height: 526px; */
   width:100%;
   height:100%;
 }
@@ -25,14 +24,14 @@
     /* width: 360px; /* can be omitted for a regular non-lazy image */
     /* max-width: 100%; */
 }
-.nft-secret-hidden {
+.nft-secret-hide {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   object-fit: contain;
-  opacity: 0;
+  display: none;
   transition: opacity .2s;
   background: black;
 }

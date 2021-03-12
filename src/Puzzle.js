@@ -18,28 +18,17 @@ export default function Puzzle() {
     rowHeight: 30,
     cols: 5
   };
-  function PuzzlePiece(props) {
-    const secretUrl = {
-      0: LostOne,
-      1: LostTwo,
-      2: LostThree
-    }
-    const key = props.tokenId % 3
-    // className="puzzle-piece"
-    console.log(props)
-    return (
-      <div key={props.key}>
-        <img className="nft-main" src={props.src}></img>
-        <img className="nft-secret" src={secretUrl[key]}></img>
-      </div>
-    )
-  }
+
   function generateDOM(items) {
     var itemHolder = {}
     items.forEach((item) => itemHolder[item.token_id] = item)
     return _.map(new Array(props.items),(item, i) => {
       if (itemHolder[i]) {
-        return PuzzlePiece({key: i, src: itemHolder[i].metadata, tokenId: itemHolder[i].token_id})
+        return (
+          <div key={i}>
+            <PuzzlePiece src={itemHolder[i].metadata} tokenId={itemHolder[i].token_id}/>
+          </div>
+        )
       } else {
         return (
           <div key={i}>

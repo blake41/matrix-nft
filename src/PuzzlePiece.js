@@ -13,13 +13,10 @@ export default function PuzzlePiece(props) {
   }
 
   const key = props.tokenId % 3
-  // <img className="nft-main" src={props.src}></img>
-  // <img className="nft-secret" src={secretUrl[key]}></img>
-  // className="puzzle-piece"
-  console.log(props)
   return (
-    <div key={props.myKey}>
-      <span className="text">{props.myKey}</span>
+    <div className="puzzle-piece-container">
+      <img className="nft-main" src={props.src}></img>
+      <img className="nft-secret" src={secretUrl[key]}></img>
     </div>
   )
 }

@@ -57,7 +57,7 @@ export default function Puzzle() {
   }, [])
   return (
     <div>
-      <button onClick={() => setShow(true)}>Show Secret</button>
+      <button onClick={() => setShow(!show)}>Show Secret</button>
       <ReactGridLayout
         layout={layout}
         {...props}

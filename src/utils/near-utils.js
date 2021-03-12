@@ -7,11 +7,11 @@ export const {
 	contractName
 } = getConfig();
 
-const contractMethods = {
+export const contractMethods = {
 	changeMethods: ['new', 'mint_token', 'guest_mint', 'transfer', 'set_price', 'purchase', 'withdraw'],
 	viewMethods: ['get_token_data', 'get_num_tokens', 'get_proceeds'],
 }
-const accessKeyMethods = {
+export const accessKeyMethods = {
 	changeMethods: ['guest_mint', 'set_price', 'withdraw'],
 	viewMethods: ['get_token_data', 'get_num_tokens', 'get_proceeds', 'get_pubkey_minted'],
 }

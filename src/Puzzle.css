@@ -15,13 +15,17 @@
   height:100%;
 }
 
+.nft-main-hide {
+  display:none;
+}
+
 
 .puzzle-piece {
     position: relative;
     /* width: 360px; /* can be omitted for a regular non-lazy image */
     /* max-width: 100%; */
 }
-.nft-secret {
+.nft-secret-hidden {
   position: absolute;
   top: 0;
   right: 0;
@@ -30,12 +34,16 @@
   object-fit: contain;
   opacity: 0;
   transition: opacity .2s;
-  height: 526px;
-  width: 436px;
   background: black;
 }
-.puzzle-piece:hover .nft-secret {
+
+.nft-secret-show {
   opacity: 1;
+}
+
+.nft-secret {
+  height: 100%;
+  width: 100%;
 }
 
 body {

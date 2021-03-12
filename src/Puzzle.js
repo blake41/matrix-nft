@@ -12,6 +12,7 @@ const ReactGridLayout = WidthProvider(RGL);
 
 export default function Puzzle() {
   const { state } = useContext(appStore);
+  const [show, setShow] = useState(false)
   const props = {
     className: "layout",
     items: 20,
@@ -26,7 +27,7 @@ export default function Puzzle() {
       if (itemHolder[i]) {
         return (
           <div key={i}>
-            <PuzzlePiece src={itemHolder[i].metadata} tokenId={itemHolder[i].token_id}/>
+            <PuzzlePiece show={show} src={itemHolder[i].metadata} tokenId={itemHolder[i].token_id}/>
           </div>
         )
       } else {
@@ -37,16 +38,10 @@ export default function Puzzle() {
         )
       }
     })
-    // return items.sort(function(a, b) {
-    //   return a.token_id - b.token_id;
-    // }).map((piece, i) => {
-    //   return PuzzlePiece({key: i, src: piece.metadata, tokenId: piece.token_id})
-    // })
   }
 
   function generateLayout() {
     return _.map(new Array(props.items), function(item, i) {
-      console.log(i)
       return {
         x: i % props.cols,
         y: 0,
@@ -61,11 +56,15 @@ export default function Puzzle() {
     setLayout(generateLayout())
   }, [])
   return (
-    <ReactGridLayout
-      layout={layout}
-      {...props}
-    >
-      {generateDOM(state.items)}
-    </ReactGridLayout>
+    <div>
+      <button onClick={() => setShow(true)}>Show Secret</button>
+      <ReactGridLayout
+        layout={layout}
+        {...props}
+      >
+        {generateDOM(state.items)}
+      </ReactGridLayout>
+    </div>
+
   );
 }

@@ -7,6 +7,7 @@
     "license": "ISC",
     "dependencies": {
         "bn": "^1.0.5",
+        "classnames": "^2.2.6",
         "core-js": "^3.9.1",
         "create-hmac": "^1.1.7",
         "near-api-js": "^0.36.2",

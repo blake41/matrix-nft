@@ -2,9 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import PuzzlePiece from './PuzzlePiece.js'
 import './Puzzle.css'
 import { appStore } from './state/app';
-import LostOne from 'url:./img/lost1.jpeg';
-import LostTwo from 'url:./img/lost2.jpeg';
-import LostThree from 'url:./img/lost3.jpeg';
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 

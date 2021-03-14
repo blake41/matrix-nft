@@ -19,7 +19,7 @@ export default function Puzzle() {
 
   function generateDOM(items) {
     var itemHolder = {}
-    items.forEach((item) => itemHolder[item.token_id -1] = item)
+    items.forEach((item) => itemHolder[item.token_id - 2] = item)
     return _.map(new Array(props.items),(item, i) => {
       if (itemHolder[i]) {
         return (

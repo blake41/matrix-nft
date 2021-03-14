@@ -25,19 +25,19 @@ import LostFifteen from 'url:./img/lost/15.jpg';
 import classNames from 'classNames'
 export default function PuzzlePiece(props) {
   const secretUrl = {
-    0: LostOne,
+    14: LostOne,
     12: LostThirteen,
     10: LostEleven,
-    14: LostFifteen,
-    11: LostTwelve,
+    0: LostFifteen,
+    3: LostTwelve,
     13: LostFourteen,
-    7: LostEight,
+    9: LostEight,
     8: LostNine,
-    9: LostTen,
+    4: LostTen,
     1: LostTwo,
     2: LostThree,
-    3: LostFour,
-    4: LostFive,
+    11: LostFour,
+    7: LostFive,
     5: LostSix,
     6: LostSeven
   }

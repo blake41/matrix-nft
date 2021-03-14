@@ -42,7 +42,7 @@ export default function PuzzlePiece(props) {
     6: LostSeven
   }
 
-  const key = props.tokenId % 15
+  const key = (props.tokenId) % 15
   const secretClasses = {
     "nft-secret-show": props.show,
     "nft-secret-hide": !props.show,
